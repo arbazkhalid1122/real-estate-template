@@ -74,16 +74,17 @@ function Home() {
   ]
 
 
-  const handleSpanClick = (index:any) => {
-    if (visibleImages < imgArray.length) {
-      setVisibleImages((prev) => prev + 1);
+ const [imgArrayy,setImgArray]  = useState(imgArray)
+  const handleSpanClick = () => {
+    if (imgArrayy.length > 0) {
+      setImgArray((prevArray:any) => prevArray.slice(1)); 
+      setActiveIndex((prev)=> prev + 1)
     } else {
-      setVisibleImages(4); // Reset to display the first four images
+      setImgArray(imgArray);
     }
   };
   const init = 3;
   const get = imgArray.slice(init)
-
 
   return (
     <div>
@@ -224,7 +225,8 @@ function Home() {
           <p style={{ color: '#002a3e', fontSize: '36px' }}>Reliable Partners</p>
         </div>
         <div className={styles.imgArr}>
-          {imgArray.slice(0, visibleImages).map((item, index) => (
+          {imgArrayy
+          .slice(0, visibleImages).map((item, index) => (
             <img src={item} alt="" />))}
         </div>
 
@@ -233,8 +235,28 @@ function Home() {
             <div>
               <span
                 className={`${styles.dot} ${index === activeIndex ? styles.active : ''}`}
-                onClick={() => handleSpanClick(index)} key={index}></span>
+                onClick={handleSpanClick} key={index}></span>
             </div>))}
+        </div>
+      </div>
+
+
+      <div className={styles.content}>
+        <div >
+          <h1>We Provide Latest Properties For Our Valuable Clients..</h1>
+          <img src="https://template.hasthemes.com/bery/bery/assets/images/about/about7.png" alt="" />
+        </div>
+        <div>
+          <p>Huge number of propreties availabe here for buy, sell and Rent. Also you find here co-living property so lots opportunity you have to choose here and enjoy huge discount.</p>
+          <div>
+          <div>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/icon/doller.png" alt="" />
+          </div>
+          <div>
+            <h3 style={{fontSize:'28px'}}>Budget Friendly</h3>
+            <p>Properties are most budget friendly so you have opportunity to find the best one</p>
+          </div>
+          </div>
         </div>
       </div>
     </div>

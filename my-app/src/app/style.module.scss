@@ -236,3 +236,14 @@
   .active, .dot:hover {
     background-color: #717171;
   }
+
+
+  .content {
+    flex-grow: 1; /* Make this container grow to fill the available space */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    text-align: center;
+  }
+
+  
