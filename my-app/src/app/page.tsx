@@ -98,6 +98,25 @@ function Home() {
     "https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png",
   ]
 
+
+  const blogpost = [
+    {
+      src: 'https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png',
+      title: 'Tip’s about Real Estate Recent Conditions from Agent.',
+      detail: 'Properties are most budget friendly so you have are opportunity to find are the best the best...'
+    },
+    {
+      src: 'https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png',
+      title: 'Tip’s about Real Estate Recent Conditions from Agent.',
+      detail: 'Properties are most budget friendly so you have are opportunity to find are the best the best...'
+    },
+    {
+      src: 'https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png',
+      title: 'Tip’s about Real Estate Recent Conditions from Agent.',
+      detail: 'Properties are most budget friendly so you have are opportunity to find are the best the best...'
+    }
+  ]
+
   return (
     <div>
       <nav className={styles.navbar}>
@@ -294,29 +313,70 @@ function Home() {
         </div>
       </div>
 
+
+      <div className={styles.propertycard}>
+        <div className={styles.propertycardItem}>
+          <div>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/properties/properties7.jpg" alt="" />
+          </div>
+          <div className={styles.propertycardchild}>
+            <h3>Elite Garden Resedence.</h3>
+            <h4>253 Montril Street, South Town, Miami</h4>
+            <span>Added: 25 November, 2021</span>
+            <p>Price: $255300</p>
+            <p>1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+          </div>
+        </div>
+        <div className={styles.propertycardItem}>
+          <div>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/properties/properties7.jpg" alt="" />
+          </div>
+          <div className={styles.propertycardchild}>
+            <h3>Elite Garden Resedence.</h3>
+            <h4>253 Montril Street, South Town, Miami</h4>
+            <span>Added: 25 November, 2021</span>
+            <p>Price: $255300</p>
+            <p>1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+          </div>
+        </div>
+        <div className={styles.propertycardItem}>
+          <div style={{position:'relative'}}>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/properties/properties7.jpg" alt="" />
+          <div style={{position:'absolute',background:'white',bottom:'16px',left:'10px'}}>For Sale</div>
+          <div style={{display:'flex',position:'absolute',right:'16px',top:'8px'}}>
+            <button style={{display:'flex',alignItems:'center',color:'white',background:'black',fontSize:'12px'}}><img src="https://template.hasthemes.com/bery/bery/assets/images/icon/camera.png" alt="" />07</button>
+            <button style={{display:'flex',alignItems:'center'}}><img src="https://template.hasthemes.com/bery/bery/assets/images/icon/camera.png" alt="" />07</button>
+          </div>
+          </div>
+          <div className={styles.propertycardchild}>
+            <h3>Elite Garden Resedence.</h3>
+            <h4>253 Montril Street, South Town, Miami</h4>
+            <span>Added: 25 November, 2021</span>
+            <p>Price: $255300</p>
+            <p>1230 Sq.fit - 4 Bed - 3 Bath - 2 Garage</p>
+          </div>
+        </div>
+
+      </div>
+
       <div className={styles.houses}>
-        <div>
+        <div className={styles.textcenter}>
           <p>Our Blog</p>
           <h1>Check Our Blog Post's.</h1>
         </div>
+
         <div className={styles.homecontainer}>
-          <div className={styles.homeitem}>
-            <img src="https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png" alt="" />
-            <div>
-              <h3>Tip’s about Real Estate Recent Conditions from Agent.</h3>
-              <p>Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
+          {blogpost.map((item) => (
+            <div className={styles.homeitem}>
+              <img src={item.src} alt="" />
+              <div>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </div>
+              <div>
+              </div>
             </div>
-          </div>
-          <div className={styles.homeitem}>
-            <img src="https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png" alt="" />
-            <h3>Tip’s about Real Estate Recent Conditions from Agent.</h3>
-            <p>Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
-          </div>
-          <div className={styles.homeitem}>
-            <img src="https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png" alt="" />
-            <h3>Tip’s about Real Estate Recent Conditions from Agent.</h3>
-            <p>Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
-          </div>
+          ))}
         </div>
       </div>
 

@@ -1,3 +1,18 @@
+
+
+.textcenter{
+  text-align: center;
+  margin-bottom: 30px;
+  h1{
+    font-size: 36px;
+  }
+  p{
+    color: rgba(73, 73, 73, 0.5);
+    font-size: 16px;
+  }
+}
+
+
 .navbar {
     background-color: #e8f1ff;
     color: black;
@@ -401,11 +416,28 @@
     p{
       margin-top: 10px;
       line-height: 1.5;
-      color: rgb(73 73 73/var(--tw-text-opacity));
     }
   }
 
   .homeitem{
     display: flex;
     flex-direction: column;
+  }
+
+
+
+  .propertycard{
+    display: flex;
+    padding: 8rem;
+    gap: 40px;
+  }
+
+  .propertycardItem{
+    background-color: #ebe8e8;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .propertycardchild{
+    padding: 20px;
   }
