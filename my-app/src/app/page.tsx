@@ -7,8 +7,10 @@ import { TiHomeOutline } from 'react-icons/ti'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { PiSelectionBold } from 'react-icons/pi'
 import { RiArrowDropDownLine } from 'react-icons/ri'
+import { MdOutlineViewHeadline } from 'react-icons/md'
 import { GoSearch } from 'react-icons/go'
 import { useState } from 'react';
+import LogoSection from './common components/partner';
 function Home() {
   const [visibleImages, setVisibleImages] = useState(4);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -74,17 +76,27 @@ function Home() {
   ]
 
 
- const [imgArrayy,setImgArray]  = useState(imgArray)
+  const [imgArrayy, setImgArray] = useState(imgArray)
   const handleSpanClick = () => {
+    console.log(activeIndex);
+
     if (imgArrayy.length > 0) {
-      setImgArray((prevArray:any) => prevArray.slice(1)); 
-      setActiveIndex((prev)=> prev + 1)
+      setImgArray((prevArray: any) => prevArray.slice(1));
+      setActiveIndex((prev) => prev + 1)
     } else {
       setImgArray(imgArray);
     }
   };
   const init = 3;
   const get = imgArray.slice(init)
+
+  const imgg = [
+    "https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png",
+    "https://template.hasthemes.com/bery/bery/assets/images/brand/brand2.png",
+    "https://template.hasthemes.com/bery/bery/assets/images/brand/brand5.png",
+    "https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png",
+    "https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png",
+  ]
 
   return (
     <div>
@@ -135,14 +147,28 @@ function Home() {
             <button>Add Property</button>
           </li>
         </ul>
+        <div className={styles.navmobile}>
+          <ul style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <li>
+              <img width={40} height={40} src="https://template.hasthemes.com/bery/bery/assets/images/user/avater.png" alt=''></img>
+            </li>
+            <li className={styles.navItem}>
+              <button>Add Property</button>
+            </li>
+            <li>
+              <MdOutlineViewHeadline />
+            </li>
+          </ul>
+        </div>
       </nav>
       <section className={styles.section}>
         <div className={styles['image-container']}>
           <img
             src="https://template.hasthemes.com/bery/bery/assets/images/hero/home-3.jpg"
             alt="Image Alt Text"
-            className={styles['responsive-image']}
+            className={`img-fluid ${styles['responsive-image']}`}
           />
+
           <div className={styles['text-overlay']}>
             <p className='ptag'>A new way to find Properties</p>
             <h1 >A new way to find Properties</h1>
@@ -205,18 +231,8 @@ function Home() {
           </div>
         </div>
       </section>
-      <div className={styles.logosection}>
-        <div>
-          <p style={{ color: '#d5a45b' }}>Our Partner’s</p>
-          <p style={{ color: '#002a3e', fontSize: '36px' }}>Reliable Partners</p>
-        </div>
-        <div className={styles.logos}>
-          <img src="https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png" alt="" />
-          <img src="https://template.hasthemes.com/bery/bery/assets/images/brand/brand2.png" alt="" />
-          <img src="https://template.hasthemes.com/bery/bery/assets/images/brand/brand5.png" alt="" />
-          <img src="https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png" alt="" />
-          <img src="https://template.hasthemes.com/bery/bery/assets/images/brand/brand3.png" alt="" />
-        </div>
+      <div>
+        <LogoSection images={imgg} heading={'Reliable Partner’s.'} text={'Our Partner’s'}></LogoSection>
       </div>
 
       <div className={styles.homeimages}>
@@ -226,8 +242,8 @@ function Home() {
         </div>
         <div className={styles.imgArr}>
           {imgArrayy
-          .slice(0, visibleImages).map((item, index) => (
-            <img src={item} alt="" />))}
+            .slice(0, visibleImages).map((item, index) => (
+              <img src={item} alt="" />))}
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '30px', marginBottom: '30px' }}>
@@ -242,23 +258,106 @@ function Home() {
 
 
       <div className={styles.content}>
-        <div >
-          <h1>We Provide Latest Properties For Our Valuable Clients..</h1>
+        <div className={styles.content2} >
+          <h1 style={{ fontSize: '36px' }}>We Provide Latest Properties For Our Valuable Clients..</h1>
           <img src="https://template.hasthemes.com/bery/bery/assets/images/about/about7.png" alt="" />
         </div>
-        <div>
+        <div className={styles.content1}>
           <p>Huge number of propreties availabe here for buy, sell and Rent. Also you find here co-living property so lots opportunity you have to choose here and enjoy huge discount.</p>
-          <div>
-          <div>
-            <img src="https://template.hasthemes.com/bery/bery/assets/images/icon/doller.png" alt="" />
+          <div className={styles.whyus}>
+            <div>
+              <img src="https://template.hasthemes.com/bery/bery/assets/images/icon/doller.png" alt="" />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '28px' }}>Budget Friendly</h3>
+              <p>Properties are most budget friendly so you have opportunity to find the best one</p>
+            </div>
           </div>
-          <div>
-            <h3 style={{fontSize:'28px'}}>Budget Friendly</h3>
-            <p>Properties are most budget friendly so you have opportunity to find the best one</p>
+          <div className={styles.whyus}>
+            <div>
+              <img src="https://template.hasthemes.com/bery/bery/assets/images/icon/doller.png" alt="" />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '28px' }}>Budget Friendly</h3>
+              <p>Properties are most budget friendly so you have opportunity to find the best one</p>
+            </div>
           </div>
+          <div className={styles.whyus}>
+            <div>
+              <img src="https://template.hasthemes.com/bery/bery/assets/images/icon/doller.png" alt="" />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '28px' }}>Budget Friendly</h3>
+              <p>Properties are most budget friendly so you have opportunity to find the best one</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <div className={styles.houses}>
+        <div>
+          <p>Our Blog</p>
+          <h1>Check Our Blog Post's.</h1>
+        </div>
+        <div className={styles.homecontainer}>
+          <div className={styles.homeitem}>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png" alt="" />
+            <div>
+              <h3>Tip’s about Real Estate Recent Conditions from Agent.</h3>
+              <p>Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
+            </div>
+          </div>
+          <div className={styles.homeitem}>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png" alt="" />
+            <h3>Tip’s about Real Estate Recent Conditions from Agent.</h3>
+            <p>Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
+          </div>
+          <div className={styles.homeitem}>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/blog/post1.png" alt="" />
+            <h3>Tip’s about Real Estate Recent Conditions from Agent.</h3>
+            <p>Properties are most budget friendly so you have are opportunity to find are the best the best...</p>
+          </div>
+        </div>
+      </div>
+
+
+      <footer className={styles.footer}>
+        <div className={styles.footeritems}>
+          <div className={styles.one}>
+            <img src="https://template.hasthemes.com/bery/bery/assets/images/logo/logo.svg" alt="" />
+            <div>
+              <p>Properties are most budget friendly so you have are find opportunity is main responsibility to clients</p>
+              <p>© CodeCarnival. All Rights Reserved - Privacy Policy</p>
+            </div>
+          </div>
+          <div className={styles.two}>
+            <h3>Information</h3>
+            <ul>
+              <li>About us</li>
+              <li>Properties</li>
+              <li>Careers</li>
+              <li>Payment</li>
+              <li>Blog Post</li>
+            </ul>
+          </div>
+          <div className={styles.three}>
+            <h3>Support</h3>
+            <ul>
+              <li>Add Property</li>
+              <li>Terms & Condition</li>
+              <li>Help line</li>
+              <li>Our Agents</li>
+              <li>features</li>
+            </ul>
+          </div>
+          <div className={styles.four}>
+            <h3>Address</h3>
+            <p>2104 Charmaine Lane Amarillo, New York</p>
+          </div>
+        </div>
+      </footer>
+
+
     </div>
 
   );
