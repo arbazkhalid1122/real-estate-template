@@ -119,7 +119,7 @@ function Home() {
 
   return (
     <div>
-      <nav className={styles.navbar}>
+      {/* <nav className={styles.navbar}>
         <div>
           <img style={{ width: '100%', height: '100%' }} src="https://template.hasthemes.com/bery/bery/assets/images/logo/logo.svg" alt=''></img>
         </div>
@@ -179,7 +179,7 @@ function Home() {
             </li>
           </ul>
         </div>
-      </nav>
+      </nav> */}
       <section className={styles.section}>
         <div className={styles['image-container']}>
           <img
@@ -192,120 +192,124 @@ function Home() {
             <p className='ptag'>A new way to find Properties</p>
             <h1 >A new way to find Properties</h1>
           </div>
-          <div className={styles.filterContainer}>
-            <p>Buy</p>
-            <p>Sell</p>
-            <p>Rent</p>
-            <p>Co-living</p>
-          </div>
-          <div>
-          </div>
-          <div className={styles.filterItem}>
-            <button><PiSlidersBold /></button>
-            <div style={{display:'flex'}}> 
-              <div className={styles.location}>
-                <div>
-                  <BiLocationPlus />
-                </div>
-                <div style={{ textAlign: 'start' }}>
-                  <p>Location</p>
-                  <p>choose location</p>
-                </div>
-              </div>
-              <div className={styles.location}>
-                <div>
-                  <TiHomeOutline />
-                </div>
-                <div style={{ textAlign: 'start' }}>
-                  <label>Location</label>
-                  <Dropdown overlay={items} placement="bottom" trigger={['click']} className={styles.dropdown}>
-                    <div style={{ display: 'flex', alignItems: 'center' }} className={styles.appartments}>
-                      <p>Appartments</p>
-                      <div>
-                        <RiArrowDropDownLine />
-                      </div>
-                    </div>
-                  </Dropdown>
-                </div>
-              </div>
-              <div className={styles.location}>
-                <div>
-                  <AiOutlineDollarCircle />
-                </div>
-                <div style={{ textAlign: 'start' }}>
-                  <label>Location</label>
-                  <p>choose location</p>
-                </div>
-              </div>
-              <div className={styles.location}>
-                <div>
-                  <BiLocationPlus />
-                </div>
-                <div style={{ textAlign: 'start' }}>
-                  <p>Location</p>
-                  <p>choose location</p>
-                </div>
-              </div>
+
+          <div className={styles.searchcontainer}>
+
+            <div className={styles.filterContainer}>
+              <p>Buy</p>
+              <p>Sell</p>
+              <p>Rent</p>
+              <p>Co-living</p>
             </div>
-            <div style={{display:'flex'}}>
-            <div className={styles.location}>
-              <div>
-                <TiHomeOutline />
+            <div>
+            </div>
+            <div className={styles.filterItem}>
+              <button><PiSlidersBold /></button>
+              <div className={styles.filterschild}>
+                <div className={styles.location}>
+                  <div>
+                    <BiLocationPlus />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <p>Location</p>
+                    <p>choose location</p>
+                  </div>
+                </div>
+                <div className={styles.location}>
+                  <div>
+                    <TiHomeOutline />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <label>Location</label>
+                    <Dropdown overlay={items} placement="bottom" trigger={['click']} className={styles.dropdown}>
+                      <div style={{ display: 'flex', alignItems: 'center' }} className={styles.appartments}>
+                        <p>Appartments</p>
+                        <div>
+                          <RiArrowDropDownLine />
+                        </div>
+                      </div>
+                    </Dropdown>
+                  </div>
+                </div>
+                <div className={styles.location}>
+                  <div>
+                    <AiOutlineDollarCircle />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <label>Location</label>
+                    <p>choose location</p>
+                  </div>
+                </div>
+                <div className={styles.location}>
+                  <div>
+                    <BiLocationPlus />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <p>Location</p>
+                    <p>choose location</p>
+                  </div>
+                </div>
               </div>
-              <div style={{ textAlign: 'start' }}>
-                <label>Location</label>
-                <Dropdown overlay={items} placement="bottom" trigger={['click']} className={styles.dropdown}>
-                  <div style={{ display: 'flex', alignItems: 'center' }} className={styles.appartments}>
-                    <p>Appartments</p>
+              <div className={styles.filterschild}>
+                <div className={styles.location}>
+                  <div>
+                    <TiHomeOutline />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <label>Location</label>
+                    <Dropdown overlay={items} placement="bottom" trigger={['click']} className={styles.dropdown}>
+                      <div style={{ display: 'flex', alignItems: 'center' }} className={styles.appartments}>
+                        <p>Appartments</p>
+                        <div>
+                          <RiArrowDropDownLine />
+                        </div>
+                      </div>
+                    </Dropdown>
+                  </div>
+                </div>
+                <div className={styles.location}>
+                  <div>
+                    <AiOutlineDollarCircle />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <label>Location</label>
+                    <p>choose location</p>
+                  </div>
+                </div>
+                <div className={styles.location}>
+
+                  <div>
+                    <PiSelectionBold />
+                  </div>
+                  <div style={{ textAlign: 'start', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '22px' }}>
                     <div>
-                      <RiArrowDropDownLine />
+                      <label>Location</label>
+                      <p>choose location</p>
+                    </div>
+                    <div className={styles.search}>
+                      <GoSearch />
                     </div>
                   </div>
-                </Dropdown>
-              </div>
-            </div>
-            <div className={styles.location}>
-              <div>
-                <AiOutlineDollarCircle />
-              </div>
-              <div style={{ textAlign: 'start' }}>
-                <label>Location</label>
-                <p>choose location</p>
-              </div>
-            </div>
-            <div className={styles.location}>
-
-              <div>
-                <PiSelectionBold />
-              </div>
-              <div style={{ textAlign: 'start', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '22px' }}>
-                <div>
-                  <label>Location</label>
-                  <p>choose location</p>
                 </div>
-                <div className={styles.search}>
-                  <GoSearch />
+                <div className={styles.location}>
+                  <div>
+                    <AiOutlineDollarCircle />
+                  </div>
+                  <div style={{ textAlign: 'start' }}>
+                    <label>Location</label>
+                    <p>choose location</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={styles.location}>
-              <div>
-                <AiOutlineDollarCircle />
-              </div>
-              <div style={{ textAlign: 'start' }}>
-                <label>Location</label>
-                <p>choose location</p>
-              </div>
-            </div>
             </div>
           </div>
         </div>
       </section>
-      <div>
+      {/* <div>
         <LogoSection images={imgg} heading={'Reliable Partner’s.'} text={'Our Partner’s'}></LogoSection>
-      </div>
+      </div> */}
 
-      <div className={styles.homeimages}>
+      {/* <div className={styles.homeimages}>
         <div>
           <p style={{ color: '#d5a45b' }}>Our Partner’s</p>
           <p style={{ color: '#002a3e', fontSize: '36px' }}>Reliable Partners</p>
@@ -466,7 +470,7 @@ function Home() {
             <p>2104 Charmaine Lane Amarillo, New York</p>
           </div>
         </div>
-      </footer>
+      </footer> */}
 
 
     </div>
