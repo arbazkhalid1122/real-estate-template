@@ -5,7 +5,7 @@ import { Dropdown, Menu } from 'antd';
 import { BiLocationPlus } from 'react-icons/bi'
 import { TiHomeOutline } from 'react-icons/ti'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
-import { PiSelectionBold } from 'react-icons/pi'
+import { PiSelectionBold, PiSlidersBold } from 'react-icons/pi'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { MdOutlineViewHeadline } from 'react-icons/md'
 import { GoSearch } from 'react-icons/go'
@@ -198,16 +198,56 @@ function Home() {
             <p>Rent</p>
             <p>Co-living</p>
           </div>
+          <div>
+          </div>
           <div className={styles.filterItem}>
-            <div className={styles.location}>
-              <div>
-                <BiLocationPlus />
+            <button><PiSlidersBold /></button>
+            <div style={{display:'flex'}}> 
+              <div className={styles.location}>
+                <div>
+                  <BiLocationPlus />
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <p>Location</p>
+                  <p>choose location</p>
+                </div>
               </div>
-              <div style={{ textAlign: 'start' }}>
-                <p>Location</p>
-                <p>choose location</p>
+              <div className={styles.location}>
+                <div>
+                  <TiHomeOutline />
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <label>Location</label>
+                  <Dropdown overlay={items} placement="bottom" trigger={['click']} className={styles.dropdown}>
+                    <div style={{ display: 'flex', alignItems: 'center' }} className={styles.appartments}>
+                      <p>Appartments</p>
+                      <div>
+                        <RiArrowDropDownLine />
+                      </div>
+                    </div>
+                  </Dropdown>
+                </div>
+              </div>
+              <div className={styles.location}>
+                <div>
+                  <AiOutlineDollarCircle />
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <label>Location</label>
+                  <p>choose location</p>
+                </div>
+              </div>
+              <div className={styles.location}>
+                <div>
+                  <BiLocationPlus />
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <p>Location</p>
+                  <p>choose location</p>
+                </div>
               </div>
             </div>
+            <div style={{display:'flex'}}>
             <div className={styles.location}>
               <div>
                 <TiHomeOutline />
@@ -234,6 +274,7 @@ function Home() {
               </div>
             </div>
             <div className={styles.location}>
+
               <div>
                 <PiSelectionBold />
               </div>
@@ -246,6 +287,16 @@ function Home() {
                   <GoSearch />
                 </div>
               </div>
+            </div>
+            <div className={styles.location}>
+              <div>
+                <AiOutlineDollarCircle />
+              </div>
+              <div style={{ textAlign: 'start' }}>
+                <label>Location</label>
+                <p>choose location</p>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -340,13 +391,13 @@ function Home() {
           </div>
         </div>
         <div className={styles.propertycardItem}>
-          <div style={{position:'relative'}}>
+          <div style={{ position: 'relative' }}>
             <img src="https://template.hasthemes.com/bery/bery/assets/images/properties/properties7.jpg" alt="" />
-          <div style={{position:'absolute',background:'white',bottom:'16px',left:'10px'}}>For Sale</div>
-          <div style={{display:'flex',position:'absolute',right:'16px',top:'8px'}}>
-            <button style={{display:'flex',alignItems:'center',color:'white',background:'black',fontSize:'12px'}}><img src="https://template.hasthemes.com/bery/bery/assets/images/icon/camera.png" alt="" />07</button>
-            <button style={{display:'flex',alignItems:'center'}}><img src="https://template.hasthemes.com/bery/bery/assets/images/icon/camera.png" alt="" />07</button>
-          </div>
+            <div style={{ position: 'absolute', background: 'white', bottom: '16px', left: '10px' }}>For Sale</div>
+            <div style={{ display: 'flex', position: 'absolute', right: '16px', top: '8px' }}>
+              <button style={{ display: 'flex', alignItems: 'center', color: 'white', background: 'black', fontSize: '12px' }}><img src="https://template.hasthemes.com/bery/bery/assets/images/icon/camera.png" alt="" />07</button>
+              <button style={{ display: 'flex', alignItems: 'center' }}><img src="https://template.hasthemes.com/bery/bery/assets/images/icon/camera.png" alt="" />07</button>
+            </div>
           </div>
           <div className={styles.propertycardchild}>
             <h3>Elite Garden Resedence.</h3>
