@@ -1,0 +1,7 @@
+.map {
+    filter: brightness( 50% );
+
+    @media (min-width: 980px) {
+        margin-bottom: 200px;
+    }
+}

@@ -1,29 +1,28 @@
 import React from 'react';
-import styles from '@/app/style.module.scss'
-interface ImageGalleryProps {
-  images: string[];
-  heading: string;
-  text: string;
-}
+import styles from '@/app/common components/style.module.scss'
+import { imgUrl } from '../data';
 
-const LogoSection: React.FC<ImageGalleryProps> = ({ images ,text,heading}) => {
+
+const LogoSection = () => {
   return (
+    <main className='container'>
     <div className={styles.logosection}>
-        <div>
-          <p style={{ color: '#d5a45b' }}>{text}</p>
-          <h1 style={{ color: '#002a3e'}}>{heading}</h1>
-        </div>
-        <div className={styles.logos}>
-      {images.map((imageUrl:any, index:any) => (
-        <img
-          key={index}
-          src={imageUrl}
-          alt={`Image ${index + 1}`}
-          className="gallery-image"
-        />
-      ))}
-        </div>
+      <div>
+        <p>Our Partner’s</p>
+        <h1>Reliable Partner’s.</h1>
+      </div>
+      <div className={styles.logos}>
+        {imgUrl.map((imageUrl:any, index:any) => (
+          <img
+            key={index}
+            src={imageUrl}
+            alt={`Image ${index + 1}`}
+            className="gallery-image"
+          />
+        ))}
+      </div>
     </div>
+    </main>
   );
 };
 

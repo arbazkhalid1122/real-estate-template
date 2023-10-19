@@ -1,0 +1,56 @@
+.footer {
+  padding: 100px;
+  background-image: url("/footer/pattern.webp");
+  background-position: bottom center;
+  background-size: auto;
+  background-color: #eeeeee;
+}
+
+.footeritems {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 150px;
+  h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  li,
+  p {
+    color: #818181;
+    margin-bottom: 12px;
+  }
+
+  p {
+    margin-top: 20px;
+    line-height: 1.75;
+  }
+}
+
+.footeritems1 {
+  flex: 1;
+}
+
+.one {
+  flex: 1;
+
+  p {
+    width: 270px;
+  }
+}
+
+.two {
+  flex: 1;
+}
+
+.three {
+  flex: 1;
+}
+
+.four {
+  flex: 1;
+
+  p {
+    width: 200px;
+  }
+}
